@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <style>*{margin:0px; padding:0px;} html,body {overflow:hidden;}body{background:white;}</style>
+    <script type="text/javascript" src="//bs.baidu.com/public01/samsung/tangram-base-1.3.9.js"></script>    
+    <script type="text/javascript" src="//bs.baidu.com/public01/2014-08/samsung/materiel.js?t=12922272729"></script>
+</head>
+<body>
+<script type="text/javascript">
+//模板配置
+var plid = 'samsung'; //物料ID
+var WRAPPER_BG_PIC = '//bs.baidu.com/public01/samsung/formbg.png'; //背景图片配置
+var SUBMIT_BTN_BG_NORMAL = ''//默认状态下表单提交按钮的背景图片
+var SUBMIT_BTN_BG_HOVER = ''//鼠标滑过表单提交按钮时的背景图片
+var SUBMIT_BTN_BG_ACTIVE = ''//鼠标按下表单提交按钮时的背景图片
+var ERRGIF = '//bs.baidu.com/public01/samsung/err.gif'; //错误提示的小叉
+var ARROWGIF = '//bs.baidu.com/public01/samsung/arrow.png'; //下拉框箭头图片
+var SUBMIT_METHOD = 'form'; //远程验证和提交方式：form表示仅Form提交；validate表示仅远程验证；validate_form表示远程验证并提交表单
+var FORMACTION = 'http://support-cn.samsung.com/StoreLocation/store/list'; //表单递交地址
+var VALIDATE_URL = ''; //远程验证地址
+var VALIDATE_ELEMENT = ''; //验证所有元素或指定元素
+var VALIDATE_ELEMENT_CUSTOM = ''; //指定需要验证的元素
+var CHARSET = 'utf-8';//字符集
+var METHOD = 'get';//传参方式
+var clkmk = 'http://clkmk.baidu.com/clkmk-rcv/rcv?'; //记录展现的地址
+
+var HIGHBG = '#fee994';//错误时高亮输入项，背景色
+var HIGHFG = '#000000';//错误时高亮输入项，前景色
+//验证代号定义
+var ADLOG = [
+    '0', //成功。当验证通过后，跳转客户网站
+    '1'
+    ];
+//黑名单定义
+//表单默认值集合
+var VALUES = {};
+//下拉框选项数据
+var PRODUCT_DATA = [{"text":"请选择*","value":"null"}];
+var PROVINCE_DATA = [{"text":"请选择*","value":"0"}];
+var CITY_DATA = [{"text":"请选择*","value":"0"}];
+//表单的配置对象
+var FORM_SETTING = {"plid":"samsung","submitAndValidate":"form","mfSubmitUrl":"http://www.samsung.com/cn/support/DealerLocatorMap/Api.aspx","mvfSubmitUrl":"","mvfValidateUrl":"","mvfValidateElement":"all","mvfValidateElementCustom":"","mvValidateUrl":"","mvValidateElement":"all","mvValidateElementCustom":"","hiddenFileds":[],"formMethod":"get","formCharset":"utf-8","formOtherField":"yes","formCustomMonitor":"yes","formCustomMonitorUrl":"http://support-cn.samsung.com/support/Pop_DealerlocatorMap.aspx?cid=cn_ppc_OMT_BA_baidu_B5_subtype_map_20121206","successCode":"0","successCodeDesc":"成功。当验证通过后，跳转客户网站","atLeastOneError":"no","atLeastOneErrorCode":"15","atLeastOneErrorCodeDesc":"至少有一项未通过","formReset":"yes","showNewContent":"no","newContent":"<img style=\"position:absolute; left:0px; top:0px;\" src=\"//bs.baidu.com/public01/samsung/success.jpg\" />\n<a target=\"blank\" href=\"http://www.baidu.com\" style=\"background:url() #FEFEFE no-repeat;display:block;height:19px;width:108px;position:absolute;left:139px;top:161px;opacity:0;filter:alpha(opacity=0);\"></a>","successCodeIndex":0,"refererElm":"product"};
+//下拉框依赖关系对象
+var SELECT_DEPENDENCY = {"﻿procince&City":{"datasource":{"text":"﻿procince&City","value":"﻿procince&City","children":[{"text":"手机","value":"HHP"},{"text":"手机配件","value":"HHPA"},{"text":"电视机","value":"CTV"},{"text":"数码照相机","value":"DC"},{"text":"摄像机","value":"DV"},{"text":"数码相框","value":"DPF"},{"text":"家庭影院","value":"HTS"},{"text":"MP3播放器","value":"MP3"},{"text":"DVD播放机","value":"DVD"},{"text":"投影机","value":"PRC"},{"text":"录音笔","value":"DVR"},{"text":"笔记本电脑","value":"NPC"},{"text":"笔记本电脑配件","value":"NPCA"},{"text":"显示器","value":"MNT"},{"text":"激光打印机","value":"OA"},{"text":"多功能一体机","value":"MIT"},{"text":"打印产品耗材","value":"OAM"},{"text":"电冰箱","value":"REF"},{"text":"空调","value":"AC"},{"text":"洗衣机","value":"WM"}]},"levelNum":1,"dependency":["product"]},"﻿procince&City1":{"datasource":{"text":"﻿procince&City1","value":"﻿procince&City1","children":[{"text":"省份","value":"0","children":[{"text":"城市","value":"0"}]},{"text":"安徽","value":"10","children":[{"text":"安庆","value":"1001"},{"text":"蚌埠","value":"1002"},{"text":"巢湖","value":"1003"},{"text":"池州","value":"1004"},{"text":"滁州","value":"1005"},{"text":"阜阳","value":"1006"},{"text":"毫州","value":"1007"},{"text":"合肥","value":"1008"},{"text":"淮北","value":"1009"},{"text":"淮南","value":"1010"},{"text":"黄山","value":"1011"},{"text":"六安","value":"1012"},{"text":"马鞍山","value":"1013"},{"text":"全椒","value":"1014"},{"text":"宿县","value":"1015"},{"text":"宿州","value":"1016"},{"text":"天长","value":"1017"},{"text":"铜陵","value":"1018"},{"text":"芜湖","value":"1019"},{"text":"溆州","value":"1020"},{"text":"1021","value":"宣城"},{"text":"秭归","value":"1022"}]},{"text":"北京","value":"11","children":[{"text":"北京","value":"1101 "}]},{"text":"福建","value":"12","children":[{"text":"长乐","value":"1201"},{"text":"大田","value":"1202"},{"text":"福安","value":"1203"},{"text":"福清","value":"1204"},{"text":"福州","value":"1205"},{"text":"建瓯","value":"1206"},{"text":"建阳","value":"1207"},{"text":"晋江","value":"1208"},{"text":"龙岩","value":"1209"},{"text":"南平","value":"1210"},{"text":"宁德","value":"1211"},{"text":"莆田","value":"1212"},{"text":"泉州","value":"1213"},{"text":"三明","value":"1214"},{"text":"沙县","value":"1215"},{"text":"邵武","value":"1216"},{"text":"石狮","value":"1217"},{"text":"武夷山","value":"1218"},{"text":"厦门","value":"1219"},{"text":"永安","value":"1220"},{"text":"漳州","value":"1221"}]},{"text":"甘肃","value":"13","children":[{"text":"白银","value":"1301"},{"text":"定西","value":"1302"},{"text":"嘉峪关","value":"1303"},{"text":"金昌","value":"1304"},{"text":"酒泉","value":"1305"},{"text":"兰州","value":"1306"},{"text":"临夏","value":"1307"},{"text":"平凉","value":"1308"},{"text":"天水","value":"1309"},{"text":"武都","value":"1310"},{"text":"武威","value":"1311"},{"text":"西峰","value":"1312"},{"text":"玉门","value":"1313"},{"text":"张掖","value":"1314"}]},{"text":"广东","value":"14","children":[{"text":"长安","value":"1401"},{"text":"常平","value":"1402"},{"text":"潮州","value":"1403"},{"text":"从化","value":"1404"},{"text":"东莞","value":"1405"},{"text":"斗门","value":"1406"},{"text":"恩平","value":"1407"},{"text":"佛山","value":"1408"},{"text":"高明","value":"1409"},{"text":"广州","value":"1410"},{"text":"河源","value":"1411"},{"text":"虎门","value":"1412"},{"text":"花都","value":"1413"},{"text":"化州","value":"1414"},{"text":"黄江","value":"1415"},{"text":"惠州","value":"1416"},{"text":"江门","value":"1417"},{"text":"茂名","value":"1418"},{"text":"梅县","value":"1419"},{"text":"梅州","value":"1420"},{"text":"南海","value":"1421"},{"text":"清远","value":"1422"},{"text":"三水","value":"1423"},{"text":"汕头","value":"1424"},{"text":"汕尾","value":"1425"},{"text":"韶关","value":"1426"},{"text":"深圳","value":"1427"},{"text":"石龙","value":"1428"},{"text":"顺德","value":"1429"},{"text":"台山","value":"1430"},{"text":"塘厦","value":"1431"},{"text":"莞城","value":"1432"},{"text":"吴川","value":"1433"},{"text":"新会","value":"1434"},{"text":"信宜","value":"1435"},{"text":"阳春","value":"1436"},{"text":"阳江","value":"1437"},{"text":"云浮","value":"1438"},{"text":"增城","value":"1439"},{"text":"湛江","value":"1440"},{"text":"樟木头","value":"1441"},{"text":"肇庆","value":"1442"},{"text":"中山","value":"1443"},{"text":"珠海","value":"1444"}]},{"text":"广西","value":"15","children":[{"text":"百色","value":"1501"},{"text":"北海","value":"1502"},{"text":"防城港","value":"1503"},{"text":"贵港","value":"1504"},{"text":"桂林","value":"1505"},{"text":"河池","value":"1506"},{"text":"贺州","value":"1507"},{"text":"柳州","value":"1508"},{"text":"南宁","value":"1509"},{"text":"钦州","value":"1510"},{"text":"梧州","value":"1511"},{"text":"玉林","value":"1512"}]},{"text":"贵州","value":"16","children":[{"text":"安顺","value":"1601"},{"text":"毕节","value":"1602"},{"text":"赤水","value":"1603"},{"text":"都匀","value":"1604"},{"text":"福泉","value":"1605"},{"text":"贵定","value":"1606"},{"text":"贵阳","value":"1607"},{"text":"凯里","value":"1608"},{"text":"六盘水","value":"1609"},{"text":"纳雍","value":"1610"},{"text":"铜仁","value":"1611"},{"text":"兴义","value":"1612"},{"text":"遵义","value":"1613"},{"text":"黔南","value":"1614"}]},{"text":"海南","value":"17","children":[{"text":"儋州","value":"1701"},{"text":"海口","value":"1702"},{"text":"琼海","value":"1703"},{"text":"琼山","value":"1704"},{"text":"三亚","value":"1705"},{"text":"万宁","value":"1706"},{"text":"文昌","value":"1707"}]},{"text":"河北","value":"18","children":[{"text":"保定","value":"1801"},{"text":"沧州","value":"1802"},{"text":"承德","value":"1803"},{"text":"定州","value":"1804"},{"text":"邯郸","value":"1805"},{"text":"衡水","value":"1806"},{"text":"廊坊","value":"1807"},{"text":"秦皇岛","value":"1808"},{"text":"任丘","value":"1809"},{"text":"石家庄","value":"1810"},{"text":"唐山","value":"1811"},{"text":"邢台","value":"1812"},{"text":"张家口","value":"1813"},{"text":"涿州","value":"1814"}]},{"text":"河南","value":"19","children":[{"text":"安阳","value":"1901"},{"text":"滨川","value":"1902"},{"text":"汾阳","value":"1903"},{"text":"巩县","value":"1904"},{"text":"鹤壁","value":"1905"},{"text":"辉县","value":"1906"},{"text":"济源","value":"1907"},{"text":"焦作","value":"1908"},{"text":"开封","value":"1909"},{"text":"洛阳","value":"1910"},{"text":"漯河","value":"1911"},{"text":"南阳","value":"1912"},{"text":"平顶山","value":"1913"},{"text":"濮阳","value":"1914"},{"text":"三门峡","value":"1915"},{"text":"商丘","value":"1916"},{"text":"新乡","value":"1917"},{"text":"信阳","value":"1918"},{"text":"许昌","value":"1919"},{"text":"郑州","value":"1920"},{"text":"周口","value":"1921"},{"text":"驻马店","value":"1922"}]},{"text":"黑龙江","value":"20","children":[{"text":"阿城","value":"2001"},{"text":"北安","value":"2002"},{"text":"大庆","value":"2003"},{"text":"大兴安岭","value":"2004"},{"text":"哈尔滨","value":"2005"},{"text":"鹤岗","value":"2006"},{"text":"黑河","value":"2007"},{"text":"鸡西","value":"2008"},{"text":"集贤","value":"2009"},{"text":"加格达奇","value":"2010"},{"text":"佳木斯","value":"2011"},{"text":"密山","value":"2012"},{"text":"牡丹江","value":"2013"},{"text":"馁化","value":"2014"},{"text":"七台河","value":"2015"},{"text":"齐齐哈尔","value":"2016"},{"text":"双鸭山","value":"2017"},{"text":"绥化","value":"2018"},{"text":"伊春","value":"2019"},{"text":"肇东","value":"2020"}]},{"text":"湖北","value":"21","children":[{"text":"赤壁","value":"2101"},{"text":"鄂州","value":"2102"},{"text":"恩施","value":"2103"},{"text":"公安","value":"2104"},{"text":"洪湖","value":"2105"},{"text":"黄冈","value":"2106"},{"text":"黄石","value":"2107"},{"text":"监利","value":"2108"},{"text":"江汉","value":"2109"},{"text":"江陵","value":"2110"},{"text":"荆门","value":"2111"},{"text":"荆沙","value":"2112"},{"text":"荆州","value":"2113"},{"text":"老河口","value":"2114"},{"text":"潜江","value":"2115"},{"text":"沙市","value":"2116"},{"text":"神农架","value":"2117"},{"text":"十堰","value":"2118"},{"text":"随枣","value":"2119"},{"text":"随州","value":"2120"},{"text":"天门","value":"2121"},{"text":"武汉","value":"2122"},{"text":"仙桃","value":"2123"},{"text":"咸宁","value":"2124"},{"text":"襄樊","value":"2125"},{"text":"孝感","value":"2126"},{"text":"宜昌","value":"2127"}]},{"text":"湖南","value":"22","children":[{"text":"长沙","value":"2201"},{"text":"常德","value":"2202"},{"text":"郴州","value":"2203"},{"text":"衡阳","value":"2204"},{"text":"怀化","value":"2205"},{"text":"吉首","value":"2206"},{"text":"冷水湘","value":"2207"},{"text":"浏阳","value":"2208"},{"text":"娄底","value":"2209"},{"text":"宁乡","value":"2210"},{"text":"邵阳","value":"2211"},{"text":"望城","value":"2212"},{"text":"湘潭","value":"2213"},{"text":"益阳","value":"2214"},{"text":"永州","value":"2215"},{"text":"岳阳","value":"2216"},{"text":"张家界","value":"2217"},{"text":"株洲","value":"2218"}]},{"text":"吉林","value":"23","children":[{"text":"白城","value":"2301"},{"text":"白山","value":"2302"},{"text":"长春","value":"2303"},{"text":"大安","value":"2304"},{"text":"敦化","value":"2305"},{"text":"公主岭","value":"2306"},{"text":"晖春","value":"2307"},{"text":"辉南","value":"2308"},{"text":"浑江","value":"2309"},{"text":"吉林","value":"2310"},{"text":"蛟河","value":"2311"},{"text":"九台","value":"2312"},{"text":"辽源","value":"2313"},{"text":"梅河口","value":"2314"},{"text":"磐石","value":"2315"},{"text":"四平","value":"2316"},{"text":"松原","value":"2317"},{"text":"通化","value":"2318"},{"text":"图门","value":"2319"},{"text":"延吉","value":"2320"},{"text":"永吉","value":"2321"},{"text":"榆树","value":"2322"},{"text":"延边","value":"2323"}]},{"text":"江苏","value":"24","children":[{"text":"常熟","value":"2401"},{"text":"常州","value":"2402"},{"text":"丹阳","value":"2403"},{"text":"东台","value":"2404"},{"text":"高邮","value":"2405"},{"text":"灌云","value":"2406"},{"text":"淮安","value":"2407"},{"text":"淮阴","value":"2408"},{"text":"江都","value":"2409"},{"text":"江阴","value":"2410"},{"text":"靖江","value":"2411"},{"text":"昆山","value":"2412"},{"text":"溧阳","value":"2413"},{"text":"连云港","value":"2414"},{"text":"南京","value":"2415"},{"text":"南通","value":"2416"},{"text":"沛县","value":"2417"},{"text":"邳州","value":"2418"},{"text":"如皋","value":"2419"},{"text":"沭阳","value":"2420"},{"text":"泗洪","value":"2421"},{"text":"泗阳","value":"2422"},{"text":"苏州","value":"2423"},{"text":"宿迁","value":"2424"},{"text":"睢宁","value":"2425"},{"text":"泰兴","value":"2426"},{"text":"泰州","value":"2427"},{"text":"通州","value":"2428"},{"text":"无锡","value":"2429"},{"text":"吴江","value":"2430"},{"text":"新沂","value":"2431"},{"text":"兴化","value":"2432"},{"text":"徐州","value":"2433"},{"text":"盐城","value":"2434"},{"text":"扬州","value":"2435"},{"text":"仪征","value":"2436"},{"text":"宜兴","value":"2437"},{"text":"张家港","value":"2438"},{"text":"镇江","value":"2439"}]},{"text":"江西","value":"25","children":[{"text":"抚州","value":"2501"},{"text":"赣州","value":"2502"},{"text":"吉安","value":"2503"},{"text":"景德镇","value":"2504"},{"text":"九江","value":"2505"},{"text":"临川","value":"2506"},{"text":"庐山","value":"2507"},{"text":"南昌","value":"2508"},{"text":"萍乡","value":"2509"},{"text":"上饶","value":"2510"},{"text":"新余","value":"2511"},{"text":"宜春","value":"2512"},{"text":"鹰潭","value":"2513"}]},{"text":"辽宁","value":"26","children":[{"text":"鞍山","value":"2601"},{"text":"鲅鱼圈","value":"2602"},{"text":"北票","value":"2603"},{"text":"北镇","value":"2604"},{"text":"本溪","value":"2605"},{"text":"朝阳","value":"2606"},{"text":"大连","value":"2607"},{"text":"丹东","value":"2608"},{"text":"东港","value":"2609"},{"text":"抚顺","value":"2610"},{"text":"阜新","value":"2611"},{"text":"盖州","value":"2612"},{"text":"海城","value":"2613"},{"text":"黑山","value":"2614"},{"text":"葫芦岛","value":"2615"},{"text":"锦州","value":"2616"},{"text":"开原","value":"2617"},{"text":"辽阳","value":"2618"},{"text":"凌源","value":"2619"},{"text":"盘锦","value":"2620"},{"text":"沈阳","value":"2621"},{"text":"铁法","value":"2622"},{"text":"铁岭","value":"2623"},{"text":"瓦房店","value":"2624"},{"text":"兴城","value":"2625"},{"text":"营口","value":"2626"},{"text":"彰武","value":"2627"}]},{"text":"内蒙古","value":"27","children":[{"text":"阿拉善左旗","value":"2702"},{"text":"包头","value":"2703"},{"text":"赤峰","value":"2704"},{"text":"东胜","value":"2705"},{"text":"鄂尔多斯","value":"2706"},{"text":"海拉尔","value":"2707"},{"text":"呼和浩特","value":"2708"},{"text":"呼伦贝尔","value":"2709"},{"text":"临河","value":"2710"},{"text":"满洲里","value":"2711"},{"text":"通辽","value":"2712"},{"text":"乌海","value":"2713"},{"text":"乌兰察布","value":"2714"},{"text":"乌兰浩特","value":"2715"},{"text":"锡林","value":"2716"},{"text":"锡林浩特","value":"2717"},{"text":"牙克石","value":"2718"},{"text":"扎兰屯","value":"2719"}]},{"text":"宁夏","value":"28","children":[{"text":"固原","value":"2801"},{"text":"贺兰","value":"2802"},{"text":"灵武","value":"2803"},{"text":"平罗县","value":"2804"},{"text":"青铜峡","value":"2805"},{"text":"石咀山","value":"2806"},{"text":"吴忠","value":"2808"},{"text":"盐池","value":"2809"},{"text":"银川","value":"2810"},{"text":"永宁","value":"2811"},{"text":"中卫","value":"2812"}]},{"text":"青海","value":"29","children":[{"text":"大通","value":"2901"},{"text":"德令哈","value":"2902"},{"text":"格尔木","value":"2903"},{"text":"共和","value":"2904"},{"text":"乐都","value":"2905"},{"text":"门源","value":"2906"},{"text":"平安","value":"2907"},{"text":"同仁","value":"2908"},{"text":"西宁","value":"2909"}]},{"text":"山东","value":"30","children":[{"text":"滨州","value":"3001"},{"text":"德州","value":"3002"},{"text":"东营","value":"3003"},{"text":"高密","value":"3004"},{"text":"荷泽","value":"3005"},{"text":"即墨","value":"3006"},{"text":"济南","value":"3007"},{"text":"济宁","value":"3008"},{"text":"莱芜","value":"3009"},{"text":"莱西","value":"3010"},{"text":"聊城","value":"3011"},{"text":"临清","value":"3012"},{"text":"临沂","value":"3013"},{"text":"龙口","value":"3014"},{"text":"平度","value":"3015"},{"text":"青岛","value":"3016"},{"text":"青州","value":"3017"},{"text":"曲阜","value":"3018"},{"text":"日照","value":"3019"},{"text":"寿光","value":"3020"},{"text":"泰安","value":"3021"},{"text":"威海","value":"3022"},{"text":"潍坊","value":"3023"},{"text":"文登","value":"3024"},{"text":"烟台","value":"3025"},{"text":"枣庄","value":"3026"},{"text":"淄博","value":"3027"}]},{"text":"山西","value":"31","children":[{"text":"长治","value":"3101"},{"text":"大同","value":"3102"},{"text":"侯马","value":"3103"},{"text":"介休","value":"3104"},{"text":"晋城","value":"3105"},{"text":"晋中","value":"3106"},{"text":"离石","value":"3107"},{"text":"临汾","value":"3108"},{"text":"吕梁","value":"3109"},{"text":"祁县","value":"3110"},{"text":"朔州","value":"3111"},{"text":"太原","value":"3112"},{"text":"忻州","value":"3113"},{"text":"阳泉","value":"3114"},{"text":"永济","value":"3115"},{"text":"榆次","value":"3116"},{"text":"运城","value":"3117"}]},{"text":"陕西","value":"32","children":[{"text":"安康","value":"3201"},{"text":"宝鸡","value":"3202"},{"text":"汉中","value":"3203"},{"text":"华县","value":"3204"},{"text":"南郑","value":"3205"},{"text":"商县","value":"3206"},{"text":"铜川","value":"3207"},{"text":"渭南","value":"3208"},{"text":"西安","value":"3209"},{"text":"咸阳","value":"3210"},{"text":"延安","value":"3211"},{"text":"榆林","value":"3212"}]},{"text":"上海","value":"33","children":[{"text":"上海","value":"3301"}]},{"text":"四川","value":"34","children":[{"text":"巴中","value":"3401"},{"text":"成都","value":"3402"},{"text":"达州","value":"3403"},{"text":"德阳","value":"3404"},{"text":"峨嵋","value":"3405"},{"text":"广安","value":"3406"},{"text":"广汉","value":"3407"},{"text":"广元","value":"3408"},{"text":"江邮","value":"3409"},{"text":"乐山","value":"3410"},{"text":"泸州","value":"3411"},{"text":"马尔康","value":"3412"},{"text":"眉山","value":"3414"},{"text":"绵阳","value":"3415"},{"text":"绵竹","value":"3416"},{"text":"内江","value":"3417"},{"text":"南充","value":"3418"},{"text":"攀枝花","value":"3419"},{"text":"彭县","value":"3420"},{"text":"郫县","value":"3421"},{"text":"遂宁","value":"3422"},{"text":"万县","value":"3423"},{"text":"西昌","value":"3424"},{"text":"雅安","value":"3425"},{"text":"宜宾","value":"3426"},{"text":"资阳","value":"3427"},{"text":"自贡","value":"3428"}]},{"text":"天津","value":"35","children":[{"text":"天津","value":"3501"}]},{"text":"西藏","value":"36","children":[{"text":"拉萨","value":"3601"},{"text":"日喀则市","value":"3602"}]},{"text":"新疆","value":"37","children":[{"text":"阿克苏","value":"3701"},{"text":"阿拉尔","value":"3702"},{"text":"阿勒泰","value":"3703"},{"text":"阿图什","value":"3704"},{"text":"博乐","value":"3707"},{"text":"昌吉","value":"3708"},{"text":"阜康","value":"3709"},{"text":"哈密","value":"3710"},{"text":"和田","value":"3711"},{"text":"喀什","value":"3712"},{"text":"克拉玛依","value":"3713"},{"text":"库尔勒","value":"3714"},{"text":"奎屯","value":"3715"},{"text":"石河子","value":"3716"},{"text":"塔城","value":"3717"},{"text":"吐鲁番","value":"3718"},{"text":"乌鲁木齐","value":"3719"},{"text":"伊犁","value":"3721"}]},{"text":"云南","value":"38","children":[{"text":"版纳","value":"3801"},{"text":"保山","value":"3802"},{"text":"呈贡","value":"3803"},{"text":"楚雄","value":"3804"},{"text":"大理","value":"3805"},{"text":"德宏","value":"3806"},{"text":"个旧","value":"3807"},{"text":"红河","value":"3808"},{"text":"建水","value":"3809"},{"text":"晋宁","value":"3810"},{"text":"景宏","value":"3811"},{"text":"景洪","value":"3812"},{"text":"开远","value":"3813"},{"text":"昆明","value":"3814"},{"text":"丽江","value":"3815"},{"text":"路南","value":"3816"},{"text":"曲靖","value":"3817"},{"text":"思茅","value":"3818"},{"text":"文山","value":"3819"},{"text":"西双版纳","value":"3820"},{"text":"宜良","value":"3821"},{"text":"玉溪","value":"3822"},{"text":"昭通","value":"3823"}]},{"text":"浙江","value":"39","children":[{"text":"安吉","value":"3901"},{"text":"慈溪","value":"3902"},{"text":"德清","value":"3903"},{"text":"东阳","value":"3904"},{"text":"富阳","value":"3905"},{"text":"海宁","value":"3906"},{"text":"杭州","value":"3907"},{"text":"湖州","value":"3908"},{"text":"嘉兴","value":"3909"},{"text":"江山","value":"3910"},{"text":"金华","value":"3911"},{"text":"兰溪","value":"3912"},{"text":"乐清","value":"3913"},{"text":"丽水","value":"3914"},{"text":"临海","value":"3915"},{"text":"宁波","value":"3916"},{"text":"宁海","value":"3917"},{"text":"平湖","value":"3918"},{"text":"平阳","value":"3919"},{"text":"衢州","value":"3920"},{"text":"瑞安","value":"3921"},{"text":"上虞","value":"3922"},{"text":"绍兴","value":"3923"},{"text":"嵊州","value":"3924"},{"text":"台州","value":"3925"},{"text":"桐乡","value":"3926"},{"text":"温州","value":"3927"},{"text":"萧山","value":"3928"},{"text":"义乌","value":"3929"},{"text":"永康","value":"3930"},{"text":"余姚","value":"3931"},{"text":"舟山","value":"3932"},{"text":"诸暨","value":"3933"}]},{"text":"重庆","value":"40","children":[{"text":"涪陵","value":"4001"},{"text":"黔江","value":"4002"},{"text":"万州","value":"4003"}]}]},"levelNum":2,"dependency":["province","city"]}};
+//定义表单元素
+var s_PRODUCT,s_PROVINCE,s_CITY;
+var sForm, s_Error, s_ErrorBG;
+function initHTML() {
+    o('<style type="text/css">');
+    o('    #wrapper{position:relative;width:150px;height:83px;background:url(\''+WRAPPER_BG_PIC+'\') no-repeat white;padding:23px 75px 0px 90px;font-size:12px;color:#333333;}');
+    o('    .soSelect { background-color: #fff; border: solid 1px #7F9DB9; position:relative; height: 20px; margin:0px; cursor: pointer; zoom:1;text-align:left;}');
+    o('    .soSelect .options {overflow-y:auto; overflow-x:hidden; background-color: #fff; border: solid 1px #7f9db9; left: -1px; position: absolute; top: 20px; z-index: 9999; margin: 0; padding: 0; list-style:none; }');
+    o('    .soSelect .options li a { color: #000; display: block; height: 18px; line-height: 18px; padding-left: 5px; text-decoration: none;}');
+    o('    .soSelect .options li a:hover { background: none repeat scroll 0 0 #36c; color: #fff; }');
+    o('    .soSelect .option_current { float: left; height: 20px; line-height: 20px; overflow: hidden; padding-left: 5px; white-space: nowrap;  z-index:20;}');
+    o('    .soSelect .option_arrow { float: right; height: 20px; overflow: hidden; width: 17px; }');
+    o('    .soSelect .option_arrow a { border: solid 1px #fff; cursor: default; display: block; height: 18px; text-align: center; white-space: nowrap; }');
+    o('    .soSelect .option_arrow a:hover .arrow { background: #F4F4F4 url("'+ARROWGIF+'") no-repeat scroll 0 -18px; cursor: pointer; }');
+    o('    .soSelect .option_arrow .arrow { background: transparent url("'+ARROWGIF+'") no-repeat scroll 0 0; display: block; height: 18px; outline:none; }');
+    o('    .formPage{}');
+    o('    .form-title{position:absolute;top:3px;left:5px;font-size:12px;font-weight:900;font-family:宋体;color:#000;}');
+    o('    table.formtab{margin:0px; border-spacing:0px; border-collapse:collapse; width:100%;}');
+    o('    table.formtab td{color: #333333;font-size:12px; padding:0px; vertical-align:middle;}');
+    o('    select{border: 1px solid #8A8A8A;padding: 1px;margin: 0px; vertical-align:middle;}');
+    o('    input{border: 1px solid #8A8A8A;padding: 2px 1px;margin: 0px; vertical-align:middle;}');
+    
+    o('    select.product_nor{color:#000000;}');
+    o('    select.product_def{color:#000000;}');
+    o('    select.province_nor{color:#000000;}');
+    o('    select.province_def{color:#000000;}');
+    o('    select.city_nor{color:#000000;}');
+    o('    select.city_def{color:#000000;}');
+    o('    .submitbtn{background:url('+SUBMIT_BTN_BG_NORMAL+') no-repeat; height:24px; width:60px; border:0px; padding:0px; cursor:pointer; margin:0px;}');
+    o('    .submitbtnHover{background:url('+SUBMIT_BTN_BG_HOVER+') no-repeat; height:24px; width:60px; border:0px; padding:0px; cursor:pointer; margin:0px;}');
+    o('    .submitbtnActive{background:url('+SUBMIT_BTN_BG_ACTIVE+') no-repeat; height:24px; width:60px; border:0px; padding:0px; cursor:pointer; margin:0px;}');
+    o('    .submitBtnCtner{height:24px; width:60px; position:absolute; top:64px; left:238px;}');
+    o('    .ec_inputerr{background:' + HIGHBG + ';color:' + HIGHFG + ';}');
+    o('</style>');
+    o('<div id="wrapper">');
+    var cHtml='<div id="formPage" class="formPage">'
+        +'<iframe name="formSubmit" style="display:none"></iframe>'
+        +'<form id="form'+plid+'" style="margin:0px; padding:0px;" target="_blank" method="'+METHOD+'" accept-charset="'+CHARSET+'" action="'+FORMACTION+'">'
+        +'<table cellspacing="0" cellpadding="0" border="0" align="center" class="formtab">'
+        +'<input type="hidden" id="op" name="op" value="1"/>'
+        +'<input type="hidden" id="cid" name="cid" value="cn_ppc_baidu_BA_20131028_MT_SAMSUNG_B5.subtype.map"/>'
+        +'<col align="left" width="105" />'
+        +'<col align="left" width="105" />'
+        +'<tbody>'
+        +'<tr style="height:35px;line-height:35px">'
+        +'<td align="left" colspan="2"><select id="product" name="ServiceType" style="font-size:12px; width:140px;"></select></td><td>&nbsp;</td>'
+        +'</tr>'
+        +'<tr style="height:35px;line-height:35px">'
+        +'<td align="left"><select id="province" name="province" style="font-size:12px; width:66px;"></select></td><td align="left"><select id="city" name="city" style="font-size:12px; width:68px;"></select></td>'
+        +'</tr>'
+        +'</tbody>'
+        +'</table>'
+        +'<div id="submitBtnCtner" class="submitBtnCtner">'
+        +'<input type="submit" class="submitbtn" id="submitBtn" value="" />'
+        +'</div>'
+        +'<div id="error'+plid+'" style="background: url(&quot;'+ERRGIF+'&quot;) no-repeat scroll 3px 4px rgb(255, 242, 242); border: 1px solid rgb(255, 191, 191); font-size: 12px; line-height: 16px; margin: 0px; padding: 2px 0px 2px 20px; position: absolute; left: 100px; visibility: hidden; z-index: 200; width:86px;"></div>'
+        +'<iframe id="bg_of_error'+plid+'" src="javascript:false;" scrolling="no" frameborder="0" style="position:absolute; top:0px; left:0px; visibility: hidden;"></iframe>'
+        +'</form>'
+        +'</div>'
+        +'<div id="successPage" class="successPage" style="display:none;">'
+        +'<img style="position:absolute; left:0px; top:0px;" src="//bs.baidu.com/public01/samsung/success.jpg" />\\n<a target="blank" href="http://www.baidu.com" style="background:url() #FEFEFE no-repeat;display:block;height:19px;width:108px;position:absolute;left:139px;top:161px;opacity:0;filter:alpha(opacity=0);"></a>'
+        +'</div>';
+    o(cHtml);
+    o('<div class="form-title">专卖店地址：</div>');
+    o('</div>');
+}
+
+initHTML();
+
+function initParam() {
+    s_PRODUCT=baidu.g('product');
+    s_PROVINCE=baidu.g('province');
+    s_CITY=baidu.g('city');
+    s_Error = baidu.g('error' + plid);
+    s_ErrorBG = baidu.g('bg_of_error' + plid);
+    sForm = baidu.g('form' + plid);
+};
+function initEvent() {
+};
+function initValue() {
+    s_PRODUCT.selectedIndex = 0;
+    s_PROVINCE.selectedIndex = 0;
+    s_CITY.selectedIndex = 0;
+}
+
+function init() {
+    initParam();
+    initSelect(s_PRODUCT, PRODUCT_DATA);
+    initSelect(s_PROVINCE, PROVINCE_DATA);
+    initSelect(s_CITY, CITY_DATA);
+    initEvent();
+    initSelectDependency();
+    initSubmitMethod();
+    //初始化验证器
+    validator.setDefault({
+        errorContainer: s_Error,
+        errorBG: s_ErrorBG
+    });
+    /*validator.add({
+        'elm': s_PROVINCE,
+        'position': 'left,above',
+        'rule': function() {
+            var value = s_PROVINCE.selectedIndex;
+            if((VALIDATE_RULES_MAP['notdefault'])(value, s_PROVINCE)){
+                return true;
+            }
+            else {
+                U.baiduAd(ADLOG[1]);
+                return false;
+            }
+        },
+        'msg': '请选择省份'
+    });*/
+}
+init();
+onload=function(){
+    initValue();
+    initInputSelectEvent();
+}
+</script>
+</body>
+</html>
